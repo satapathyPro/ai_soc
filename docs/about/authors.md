@@ -29,11 +29,10 @@ California State University, San Bernardino
 
 ## Implementation Developer
 
-**Abdul Bari**
-Graduate Student, Computer Science
-California State University, San Bernardino
+**Subham Satapathy**
+Software Engineer
 
-[abdul.bari8019@coyote.csusb.edu](mailto:abdul.bari8019@coyote.csusb.edu) • [GitHub](https://github.com/zhadyz)
+[satapathypro@gmail.com](mailto:satapathypro@gmail.com) • [GitHub](https://github.com/satapathyPro)
 
 ## Acknowledgments
 
@@ -41,7 +40,7 @@ This implementation builds directly upon the foundational survey paper "AI-Augme
 
 The survey's systematic literature review (500+ papers using PRISMA methodology) provided the theoretical framework and research questions that guided this implementation.
 
-The production codebase, deployment automation, ML model training, and system architecture were developed by Abdul Bari as a practical validation of the survey's findings.
+The production codebase, deployment automation, ML model training, and system architecture were developed as a practical validation of the survey's findings.
 
 ## Open Source Acknowledgments
 
