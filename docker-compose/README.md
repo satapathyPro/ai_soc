@@ -909,16 +909,16 @@ tar xzf "$BACKUP_DIR/configs.tar.gz"
 - **Docker Compose:** https://docs.docker.com/compose/
 
 ### AI-SOC Project
-- **GitHub Repository:** https://github.com/zhadyz/AI_SOC
+- **GitHub Repository:** https://github.com/satapathyPro/ai_soc
 - **ROADMAP:** See `ROADMAP.md` in project root
 - **Issue Tracker:** GitHub Issues
 
 ### Support
-- **Email:** abdul.bari8019@coyote.csusb.edu
-- **GitHub Discussions:** https://github.com/zhadyz/AI_SOC/discussions
+- **Email:** satapathypro@gmail.com
+- **GitHub Discussions:** https://github.com/satapathyPro/ai_soc/discussions
 
 ---
 
 **Last Updated:** 2025-10-13
-**Author:** Abdul Bari
+**Author:** Subham Satapathy
 **Version:** 1.0.0
