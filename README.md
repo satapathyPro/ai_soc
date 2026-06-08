@@ -613,8 +613,6 @@ Apache License 2.0. See [LICENSE](LICENSE).
 
 ## Author
 
-Abdul Bari
+Subham Satapathy
 
-California State University, San Bernardino
-
-Contact: z@onyxlab.ai
+Contact: satapathypro@gmail.com
