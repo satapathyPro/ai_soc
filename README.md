@@ -1,15 +1,21 @@
 # AI-Augmented Security Operations Center
 
-Local AI services, machine-learning intrusion detection, alert enrichment, attack-campaign simulation, and response planning for security operations research.
+> Local AI services, machine-learning intrusion detection, alert enrichment, attack-campaign simulation, and response planning for security operations research.
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Docker Compose](https://img.shields.io/badge/docker-compose-blue.svg)](https://docs.docker.com/compose/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/downloads/)
+[![Docker Compose](https://img.shields.io/badge/docker-compose-2496ED.svg?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+[![Ollama](https://img.shields.io/badge/LLM-Ollama%20local-black.svg?logo=ollama&logoColor=white)](https://ollama.ai)
+[![ChromaDB](https://img.shields.io/badge/vector--db-ChromaDB-orange.svg)](https://www.trychroma.com/)
+[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Dataset: CICIDS2017](https://img.shields.io/badge/dataset-CICIDS2017-green.svg)](datasets/CICIDS2017/README.md)
+[![MITRE ATT&CK](https://img.shields.io/badge/framework-MITRE%20ATT%26CK-red.svg)](https://attack.mitre.org/)
+[![D3FEND](https://img.shields.io/badge/framework-D3FEND-blue.svg)](https://d3fend.mitre.org/)
+[![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-336791.svg?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
 AI-SOC is a research-grade implementation of an AI-assisted security operations center. It combines trained IDS models, local LLM alert triage, retrieval over security knowledge, Wazuh integration, incident correlation, swarm-scale attack simulation, and a prototype response orchestrator.
 
-The project is intentionally local-first: security event data is processed through local services and Ollama-backed LLM inference rather than a hosted LLM API.
+The project is intentionally **local-first**: security event data is processed through local services and Ollama-backed LLM inference rather than a hosted LLM API.
 
 ## What This Is
 
@@ -116,6 +122,25 @@ flowchart TB
     integration -. logs .-> loki
 ```
 
+## System Components
+
+| Service | Port | Technology | Role |
+|---|---|---|---|
+| Wazuh SIEM | 443 / 9200 / 55000 | Wazuh 4.x | Security event collection and indexing |
+| Wazuh Integration | 8002 | FastAPI | Webhook receiver, alert routing, enrichment |
+| Alert Triage | 8100 | FastAPI + Ollama | Local LLM alert analysis, confidence scoring |
+| ChromaDB | 8200 | ChromaDB | Vector store for RAG retrieval |
+| RAG Service | 8300 | FastAPI + ChromaDB | MITRE ATT&CK, CVE, and runbook retrieval |
+| Feedback Service | 8400 | FastAPI + PostgreSQL | Alert history and analyst label persistence |
+| ML Inference | 8500 | FastAPI + scikit-learn | Random Forest / XGBoost / Decision Tree IDS |
+| Correlation Engine | 8600 | FastAPI | Incident grouping, kill-chain, simulation |
+| Rule Generator | 8700 | FastAPI | Sigma rule drafting and back-testing |
+| Response Orchestrator | 8800 | FastAPI | D3FEND mapping, approval tiers, execution |
+| Ollama | 11434 | Ollama | Local LLM inference (Llama 3, Mistral, etc.) |
+| Grafana | 3000 | Grafana | Dashboards and alerting |
+| Prometheus | 9090 | Prometheus | Metrics scraping |
+| Alertmanager | 9093 | Alertmanager | Alert routing and notification |
+
 ## Repository Layout
 
 ```text
@@ -155,16 +180,16 @@ flowchart TB
 Linux/macOS:
 
 ```bash
-git clone https://github.com/zhadyz/AI_SOC.git
-cd AI_SOC
+git clone https://github.com/satapathyPro/ai_soc.git
+cd ai_soc
 ./deploy-ai-soc.sh
 ```
 
 Windows PowerShell:
 
 ```powershell
-git clone https://github.com/zhadyz/AI_SOC.git
-cd AI_SOC
+git clone https://github.com/satapathyPro/ai_soc.git
+cd ai_soc
 .\deploy-ai-soc.ps1
 ```
 
@@ -563,7 +588,7 @@ The platform implements and tests several themes from that work:
   institution  = {California State University, San Bernardino},
   year         = {2025},
   note         = {Research implementation of ML, LLM, RAG, simulation, and response-planning workflows for security operations},
-  url          = {https://github.com/zhadyz/AI_SOC}
+  url          = {https://github.com/satapathyPro/ai_soc}
 }
 ```
 
